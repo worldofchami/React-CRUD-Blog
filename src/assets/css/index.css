@@ -1,0 +1,199 @@
+.page {
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome__container {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.welcome__container>h1 {
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.welcome__container>span {
+    font-size: .8rem;
+    text-align: center;
+}
+
+.welcome__container>span>a {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3A00DE;
+}
+
+.posts__container {
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: max-content;
+    gap: 20px;
+    padding: 20px 50px;
+    margin-bottom: 100px;
+}
+
+.post__block {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.post__thumbnail--container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+}
+
+.post__info--container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+    flex-grow: 1;   
+}
+
+.post__info--container>*:empty::after {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 10px;
+    border-radius: 10px;
+    background: #414141;
+}
+
+.MuiSkeleton-root {
+    border-radius: 10px;
+    background-color: #212121 !important;
+}
+
+.MuiSkeleton-rounded {
+    width: 100%;
+    height: 100% !important;
+    border-radius: 20px !important;
+}
+
+.post__title {
+    width: 170px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: 2.7rem;
+    cursor: pointer;
+}
+
+.post__block .post__title {
+    font-size: 1.3rem;
+}
+
+.post__title:hover {
+    color: #3A00DE;
+}
+
+.post__title:empty::after {
+    width: 50%;
+}
+
+.post__short {
+    width: 170px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: .8rem;
+}
+
+.post__short:empty::after {
+    width: 70%;
+}
+
+.post__time {
+    font-size: small;
+    font-weight: 600;
+}
+
+.post__time:empty::after {
+    width: 40%;
+}
+
+.post__settings {
+    position: absolute;
+    right: 10px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.post__settings>summary {
+    justify-content: flex-end;
+}
+
+.post__settings>summary:hover, .post__settings[open]>summary {
+    color: #3A00DE !important;
+}
+
+.post__settings__options__container {
+    width: 100px;
+}
+
+.post__settings__options__container>ul {
+    border-radius: 10px;
+    cursor: pointer;
+    background: #3A00DE;
+    box-shadow: 0 5px 10px #0f0f0f;
+}
+
+.post__settings__options__container>ul>li {
+    display: flex;
+    padding: 7px 10px;
+    font-size: .7rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.post__settings__options__container>ul>li>span {
+    margin-left: 7px;
+}
+
+.post__settings__options__container>ul>li>i {
+    font-size: 1rem;
+}  
+
+.post__settings__options__container>ul>li:hover {
+    background: #2a00a0;
+}
+
+.post__thumbnail--container>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .posts__container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        padding: 20px 20px;
+    }
+
+    .post__info--container>*:empty::after {
+        height: 8px;
+    }
+
+    .post__time {
+        font-size: .6rem;
+    }
+
+    .post__short, .post__title {
+        width: 110px;
+    }
+}

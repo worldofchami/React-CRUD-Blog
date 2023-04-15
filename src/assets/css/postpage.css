@@ -1,0 +1,26 @@
+.post__page--container {
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.post__thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+}
+
+.post__thumb>img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.post__page--container .post__title {
+    width: 100%;
+}

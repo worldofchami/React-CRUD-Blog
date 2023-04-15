@@ -1,17 +1,38 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter as Router,
+  useRoutes,
+} from "react-router-dom";
+import DNEPage from './components/global/DNEPage';
+import { FetchPost } from './components/global/FetchPost';
+import { Index } from './components/global/Index';
+import Profile from './components/global/Profile';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const App = () => {
+    let routes = useRoutes([
+      {
+        path: "/",
+        element: <Index />
+      },
+      {
+        path: "/post/:id",
+        element: <FetchPost />
+      },
+      {
+        path: "/profile",
+        element: <Profile />
+      },
+      {
+        path: "/*",
+        element: <DNEPage />
+      }
+    ]);
+
+    return routes;
+};
+
+ReactDOM.createRoot(document.querySelector('.page')).render(
+    <Router>
+      <App />
+    </Router>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

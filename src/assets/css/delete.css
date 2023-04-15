@@ -1,0 +1,26 @@
+.small__modal {
+    width: 400px;
+    height: 150px;
+    max-width: 80vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 20px;
+    background: #212121;
+    box-shadow: 0 5px 10px #0f0f0f;
+    z-index: 2;
+}
+
+.small__modal__action__container {
+    display: flex;
+    gap: 10px;
+}
