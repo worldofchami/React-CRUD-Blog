@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #E2E2E2;
+    font-family: 'Inter', sans-serif;
 }
 
 ::marker, ::-webkit-details-marker {
